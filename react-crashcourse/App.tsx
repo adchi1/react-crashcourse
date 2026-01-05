@@ -8,18 +8,20 @@ export default function App() {
       <Text style={styles.h1}> Staff Check-in </Text>
       <Text style={styles.h2}> by Ada Anya </Text>
 
-      <HelloCard name="[name]">
-        </HelloCard>
+      <HelloCard name="Ada"></HelloCard>
     </View>
   );
 }
 
+// TO DO: make a css file that exports a style constant for each .tsx file to use
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    padding: 100,
+    backgroundColor: '#f9f7f2ff',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'relative',
   },
 
   h1: {

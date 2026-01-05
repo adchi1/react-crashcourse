@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { HelloCard } from 'components/HelloCard';
+import HelloCard from './components/HelloCard';
 
 export default function App() {
   return (
-    // make these title and subtitle
     <View style={styles.container}>
-      <Text> Staff Check-in </Text>
-      <Text> by Ada Anya </Text>
+      <Text style={styles.h1}> Staff Check-in </Text>
+      <Text style={styles.h2}> by Ada Anya </Text>
 
-      <HelloCard name="your name" />
+      <HelloCard name="[name]">
+        </HelloCard>
     </View>
   );
 }
@@ -21,4 +21,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  h1: {
+    fontSize: 18,
+    color: '#dc912eff',
+  },
+  h2: {
+    fontSize: 14,
+    color: '#d3af63ff'
+  }
 });

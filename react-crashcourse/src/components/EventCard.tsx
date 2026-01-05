@@ -1,18 +1,22 @@
 import { StyleSheet, Text } from 'react-native';
 
-interface HelloCard {
+interface EventCard {
   name: string;
+  date: string;
+  location: string;
 }
 
-const HelloCard = ({ name }: HelloCard) => {
+const EventCard = ({ name, date, location }: EventCard) => {
   return (
     <Text style={styles.div}>
-      <Text style={styles.p}>Hello, {name}</Text>
+        <Text style={styles.h2}>Hello, {name}</Text>
+        <Text style={styles.p}>{date} <br></br> {location}</Text>
+        
     </Text>
   );
 };
 
-export default HelloCard;
+export default EventCard;
 
 const styles = StyleSheet.create({
   div: {
@@ -24,6 +28,10 @@ const styles = StyleSheet.create({
     top: 100,
     padding: 50,
     bottom: 200,
+  },
+  h2: {
+    fontSize: 14,
+    color: '#d3af63ff'
   },
   p: {
     fontSize: 12,

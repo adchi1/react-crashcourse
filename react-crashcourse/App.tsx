@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import HelloCard from './components/HelloCard';
+import styles from './src/css/StyleSheet';
 
 export default function App() {
   return (
@@ -12,24 +13,3 @@ export default function App() {
     </View>
   );
 }
-
-// TO DO: make a css file that exports a style constant for each .tsx file to use
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 100,
-    backgroundColor: '#f9f7f2ff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-  },
-
-  h1: {
-    fontSize: 18,
-    color: '#dc912eff',
-  },
-  h2: {
-    fontSize: 14,
-    color: '#d3af63ff'
-  }
-});

@@ -42,21 +42,15 @@ const EventList = () => {
         </Text>
     });
 
-    const renderItem: ListRenderItem<EventCard> = ({item}) => {
-        return (
-            <Text style={styles.li} key={item.id}>
-                <EventCard name={item.name} date={item.date} location={item.location}/>
-            </Text>
-        );
-    }
-
     return (
         <View style={styles.container}>
             <Text style={styles.h2}> Upcoming Events</Text>
             <FlatList
-                data={listItems}
-                renderItem={renderItem}
-                keyExtractor={event => event.id}
+                data={events}
+                renderItem={({item}) => 
+                    <Text style={styles.li} key={item.id}>
+                        <EventCard name={item.name} date={item.date} location={item.location}/>
+                    </Text>}
                 ListEmptyComponent={<Text style={styles.p}>No events available...</Text>}
                 />
         </View>

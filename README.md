@@ -1,5 +1,5 @@
 # react-crashcourse
-These are demos to demonstrate my understanding of React Learn
+These are demos to demonstrate my understanding of React Native
 
 Node Version: v22.17.1
 

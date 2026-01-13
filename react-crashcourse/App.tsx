@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 import HelloCard from './components/HelloCard';
-import EventList from './src/components/EventCard'
+import EventList from './src/pages/EventList'
 import styles from './src/css/StyleSheet';
 
 export default function App() {

@@ -35,8 +35,15 @@ const events = [{
     location: 'Online' 
 }];
 
+type ItemProps = {
+    id: string, 
+    name: string, 
+    date: string, 
+    location: string,
+};
+
 const EventList = () => {
-    const listItems = events.map(event => {
+    const data = events.map(event => {
         <Text style={styles.li} key={event.id}>
             <EventCard name={event.name} date={event.date} location={event.location}/>
         </Text>
@@ -46,13 +53,13 @@ const EventList = () => {
         <View style={styles.container}>
             <Text style={styles.h2}> Upcoming Events</Text>
             <FlatList
-                data={events}
-                renderItem={({item}) => 
-                    <Text style={styles.li} key={item.id}>
-                        <EventCard name={item.name} date={item.date} location={item.location}/>
-                    </Text>}
+                data={data}
+                renderItem={
+                    (event: ItemProps) => <EventCard name={event.name} date={event.date} location={event.location}/>
+                }
+                keyExtractor={(event: ItemProps) => event.id}
                 ListEmptyComponent={<Text style={styles.p}>No events available...</Text>}
-                />
+            />
         </View>
 
     );

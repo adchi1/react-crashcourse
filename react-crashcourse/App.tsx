@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import HelloCard from './components/HelloCard';
+import EventList from './src/components/EventCard'
 import styles from './src/css/StyleSheet';
 
 export default function App() {
@@ -10,6 +11,8 @@ export default function App() {
       <Text style={styles.h2}> by Ada Anya </Text>
 
       <HelloCard name="Ada"></HelloCard>
+      <EventList />
+
     </View>
   );
 }

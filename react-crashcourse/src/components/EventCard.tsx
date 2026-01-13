@@ -5,7 +5,7 @@ interface EventCard {
   name: string;
   date: string;
   location: string;
-}
+};
 
 const EventCard = ({ name, date, location }: EventCard) => {
   return (

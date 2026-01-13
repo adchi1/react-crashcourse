@@ -2,8 +2,14 @@ import { ListRenderItem, Text, FlatList, View } from 'react-native';
 import EventCard from '../components/EventCard';
 import styles from '../css/StyleSheet';
 
-// these are a list of my hardcoded events
-const events = [{
+type ItemProps = {
+    id: number, 
+    name: string, 
+    date: string, 
+    location: string,
+};
+
+const events: ItemProps[] = [{
     id: 1, 
     name: 'Birthday Party', 
     date: "11/01/2026", 
@@ -35,29 +41,18 @@ const events = [{
     location: 'Online' 
 }];
 
-type ItemProps = {
-    id: string, 
-    name: string, 
-    date: string, 
-    location: string,
-};
-
 const EventList = () => {
-    const data = events.map(event => {
-        <Text style={styles.li} key={event.id}>
-            <EventCard name={event.name} date={event.date} location={event.location}/>
-        </Text>
-    });
+    const renderItem: ListRenderItem<ItemProps> = ({item}) => (
+        <EventCard name={item.name} date={item.date} location={item.location}/>
+    );
 
     return (
         <View style={styles.container}>
             <Text style={styles.h2}> Upcoming Events</Text>
             <FlatList
-                data={data}
-                renderItem={
-                    (event: ItemProps) => <EventCard name={event.name} date={event.date} location={event.location}/>
-                }
-                keyExtractor={(event: ItemProps) => event.id}
+                data={events}
+                renderItem={renderItem}
+                keyExtractor={(event: ItemProps) => event.id.toString()}
                 ListEmptyComponent={<Text style={styles.p}>No events available...</Text>}
             />
         </View>

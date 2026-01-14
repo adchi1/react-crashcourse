@@ -9,6 +9,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     position: 'relative',
   },
+  list: {
+    flex: 1,
+    padding: 50,
+    width: 50,
+    height: 50,
+  },
   h1: {
     fontSize: 18,
     color: '#dc912eff',
@@ -18,14 +24,14 @@ const styles = StyleSheet.create({
     color: '#d3af63ff'
   },
   div: {
+    display: 'flex',
+    gap: 20,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
-    top: 100,
     padding: 50,
-    bottom: 200,
   },
   p: {
     fontSize: 12,

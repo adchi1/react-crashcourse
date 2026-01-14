@@ -1,4 +1,5 @@
 import { StyleSheet, Text } from 'react-native';
+import styles from '../src/css/StyleSheet';
 
 interface HelloCard {
   name: string;
@@ -13,20 +14,3 @@ const HelloCard = ({ name }: HelloCard) => {
 };
 
 export default HelloCard;
-
-const styles = StyleSheet.create({
-  div: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    top: 100,
-    padding: 50,
-    bottom: 200,
-  },
-  p: {
-    fontSize: 12,
-    color: '#5a4c3aff',
-  },
-});
